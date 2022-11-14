@@ -1,5 +1,7 @@
-import React, { MouseEvent } from 'react';
+import React from 'react';
+// import {MouseEvent} from 'react';
 import './App.css';
+import {Button} from './3/components/Button';
 // import {Header} from './1/Header';
 // import {Body} from './1/Body';
 // import {Footer} from './1/Footer';
@@ -34,12 +36,23 @@ function App() {
     //     console.log(number)
     // }
 
-    const onClickHandler = (name: string) => {
-        console.log(`Hello Im ${name}`)
-    }
+    // const onClickHandler = (name: string) => {
+    //     console.log(`Hello Im ${name}`)
+    // }
 
+
+    const Button1Foo = (subscriber:string, age:number, address: string) => {
+        console.log(subscriber, age, address)
+    }
+    const Button2Foo = (subscriber:string) => {
+        console.log(subscriber)
+    }
+    const Button3Foo = () => {
+        console.log("I am stupid button")
+    }
+    
     return (
-        <div className={"App"}>
+        <div className={'App'}>
             {/*<Header titleForHeader = {"New Header"}/>*/}
             {/*<Body titleForBody = {"New Body"}/>*/}
             {/*<Footer titleForFooter = {"New Footer"}/>*/}
@@ -47,8 +60,14 @@ function App() {
             {/*<button onClick={(event)=>{console.log("Hello")}}>MyYouTubeChannel-1</button>*/}
             {/*<button onClick={foo1}>1</button>*/}
             {/*<button onClick={((event: MouseEvent<HTMLButtonElement>) => foo2(100200))}>2</button>*/}
-            <button onClick={(event: MouseEvent<HTMLButtonElement>) => onClickHandler("VASYA")}> MyYouTubeChannel-1</button>
-            <button onClick={(event: MouseEvent<HTMLButtonElement>) => onClickHandler("IVAN")}>MyYouTubeChannel-2</button>
+            {/*<button onClick={(event: MouseEvent<HTMLButtonElement>) => onClickHandler('VASYA')}> MyYouTubeChannel-1*/}
+            {/*</button>*/}
+            {/*<button onClick={(event: MouseEvent<HTMLButtonElement>) => onClickHandler('IVAN')}>MyYouTubeChannel-2*/}
+            {/*</button>*/}
+
+            <Button name={"MyYouTubeChannel-1"} callBack={()=>Button1Foo("I am Vasya", 21, "live in Minsk")}/>
+            <Button name={"MyYouTubeChannel-2"} callBack={()=>Button2Foo("I am Ivan")}/>
+            <Button name={"stupid button"} callBack={Button3Foo}/>
 
         </div>
     );
