@@ -18,8 +18,6 @@ export const NewComponent = (props: NewComponentType) => {
         {manufacturer: 'Audi', model: 'rs6'}
     ]
 
-
-
     return (
         <div>
             {/*<ul>*/}
